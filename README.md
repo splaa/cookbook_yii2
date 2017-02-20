@@ -14,3 +14,5 @@ git push -u origin master2
 копируем все содержимоетекущей папки на уровень выше ( mv * ../ )
 
 создаём символьную ссылку на папку web( sudo ln -s test/web test.dev )
+
+создаём файл echo "# cookbook_yii2" >> README.md

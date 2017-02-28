@@ -11,10 +11,10 @@ git push -u origin master
 
 
 git remote add origin https://github.com/splaa/cookbook_yii2.git
-git push -u origin master2
+git push -u origin master
 
 копируем все содержимоетекущей папки на уровень выше ( mv * ../ )
 
-создаём символьную ссылку на папку web( sudo ln -s test/web test.dev )
+создаём символьную ссылку на папку web( sudo ln -s test/web test.dev ) для Mac OS
 
 создаём файл echo "# cookbook_yii2" >> README.md

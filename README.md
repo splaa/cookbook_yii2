@@ -18,3 +18,18 @@ git push -u origin master
 создаём символьную ссылку на папку web( sudo ln -s test/web test.dev ) для Mac OS
 
 создаём файл echo "# cookbook_yii2" >> README.md
+
+
+
+Заметил что время выводится в записях с разницей на 1 час от того, которое указываю при создании записи. Эта проблема связана с временной зоной. И надо её прописать в конфиге. Добавил в массив components в formatter параметр 'timeZone'
+
+'formatter' => [
+               'class' => 'yii\i18n\Formatter',
+               'defaultTimeZone' => 'Europe/Kiev',
+               'timeZone' => 'GMT+2',
+               'dateFormat' => 'd MMMM yyyy',
+               'datetimeFormat' => 'd-M-Y H:i:s',
+               'timeFormat' => 'H:i:s', 
+        ],
+Без 'timeZone' => 'GMT+3', время опережало установленное на 1 час.
+

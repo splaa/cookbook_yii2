@@ -1,0 +1,34 @@
+class m170316_192411_create_comments_table extends Migration
+{
+    /**
+     * @inheritdoc
+     */
+    public function up()
+    {
+	    $tableOptions = null;
+	    if ($this->db->driverName === 'mysql') {
+		    $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+	    }
+        $this->createTable('comments', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string(),
+            'text' => $this->string(),
+        ], $tableOptions);
+	    $this->batchInsert('comments', ['name','text'], [
+		    ['Имя1', 'text comment1',],
+		    ['Имя2', 'text comment2',],
+		    ['Имя3', 'text comment3',],
+		    ['Имя4', 'text comment4',],
+		    ['Имя5', 'text comment5',],
+
+	    ]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function down()
+    {
+        $this->dropTable('comments');
+    }
+}

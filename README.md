@@ -1,3 +1,16 @@
+
+# mysql #
+
+mysql -г root -p
+SHOW DATABASES ;
+create database yii_rusakov character set utf8 collate utf8_general_ci;
+SHOW DATABASES ;
+
+
+
+
+
+
 # cookbook_yii2 #
 
 
